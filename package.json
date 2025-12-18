@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "start": "python3 -m http.server --bind 0.0.0.0 9000"
+    "start": "python3 -m http.server --bind 0.0.0.0 9000",
+    "subset": "glyphhanger --whitelist='U+A,U+20,U+2588,U+2591' --formats=woff2 --subset=elena.ttf"
   }
 }

@@ -9,16 +9,17 @@
     />
     <title>Elena Custom Elements</title>
     <meta name="fediverse:creator" content="@ariel@front-end.social" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=auto"
-      rel="stylesheet"
-    />
     <style>
       :root {
         --elena-color-accent: #f09d76;
         --elena-color-background: #2a1c15;
+      }
+      @font-face {
+        font-family: "Elena Mono";
+        src: url("elena-subset.woff2") format("woff2");
+        font-style: normal;
+        font-display: auto;
+        font-weight: 400;
       }
       * {
         margin: 0;
@@ -26,11 +27,9 @@
         box-sizing: border-box;
         background: transparent;
       }
-
       html {
         height: -webkit-fill-available;
       }
-
       body {
         min-height: 100vh;
         min-height: -webkit-fill-available;
@@ -42,19 +41,21 @@
         color: var(--elena-color-accent);
       }
       pre {
-        -webkit-font-smoothing: subpixel-antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-family: "IBM Plex Mono", monospace, monospace;
+        font-family: "Elena Mono", Menlo, monospace;
         font-weight: 400;
         font-style: normal;
         font-size: clamp(0.5rem, 2.5vw, 1.25rem);
         line-height: 1.2;
         white-space: pre;
       }
+      ::selection {
+        background-color: var(--elena-color-accent);
+        color: var(--elena-color-background);
+      }
     </style>
   </head>
   <body>
-    <pre>
+<pre>
  ██████████ ████
 ░░███░░░░░█░░███
  ░███  █ ░  ░███   ██████  ████████    ██████
@@ -65,6 +66,6 @@
 ░░░░░░░░░░ ░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░░░
 
 ░█ [ELENA]: Compiling Elena Custom Elements...
-    </pre>
+</pre>
   </body>
 </html>
