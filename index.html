@@ -21,8 +21,13 @@
         background: transparent;
       }
 
+      html {
+        height: -webkit-fill-available;
+      }
+
       body {
-        block-size: 100vh;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
         display: grid;
         font-size: 100%;
         align-items: center;
