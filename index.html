@@ -34,10 +34,6 @@
         font-display: swap;
         font-weight: 400;
       }
-      @keyframes cursor {
-        from, to { opacity: 0 }
-        50% { opacity: 1 }
-      }
       @keyframes bounce {
         0% { transform: none }
         33% { transform: translateY(-.25em) }
@@ -53,8 +49,11 @@
         height: -webkit-fill-available;
       }
       body {
+        font-smooth: never;
+        -webkit-font-smoothing: none;
         min-height: 100vh;
         min-height: -webkit-fill-available;
+        padding-block: 3vh;
         display: grid;
         font-size: 100%;
         align-items: center;
@@ -64,14 +63,19 @@
       }
       pre {
         font-family: "Elena Mono", Menlo, monospace;
+        width: 58ch;
         font-weight: 400;
         font-style: normal;
+        letter-spacing: -0.005em;
         font-size: clamp(0.5rem, 2.5vw, 1.25rem);
         line-height: 1.2;
-        white-space: pre;
+        white-space: pre-wrap;
       }
-      .cursor {
-        animation: cursor 1400ms step-end infinite;
+      @-moz-document url-prefix() {
+        pre { width: 48ch }
+      }
+      pre:focus {
+        outline: 0;
       }
       .ellipsis {
         display: inline-block;
@@ -86,11 +90,12 @@
       ::selection {
         background-color: var(--elena-color-accent);
         color: var(--elena-color-background);
+        background-color: rgba(241, 156, 119, 0.99);
       }
     </style>
   </head>
   <body>
-<pre>
+<pre contenteditable="plaintext-only" enterkeyhint="enter" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
  ██████████ ████
 ░░███░░░░░█░░███
  ░███  █ ░  ░███   ██████  ████████    ██████
@@ -102,7 +107,14 @@
 
 ░█ [ELENA]: Compiling Elena Custom Elements<span class="ellipsis">.</span><span class="ellipsis">.</span><span class="ellipsis">.</span>
 
-<span class="cursor">|</span>
-</pre>
+ </pre>
+    <script>
+      var terminal = document.querySelector("pre");
+      setTimeout(() => {
+        terminal.focus();
+        document.execCommand("selectAll", false, null);
+        document.getSelection().collapseToEnd();
+      }, 500);
+    </script>
   </body>
 </html>
