@@ -63,4 +63,4 @@ MIT
 
 ## Copyright
 
-Copyright (c) 2025 [Ariel Salminen](https://arielsalminen.com)
+Copyright © 2025 [Ariel Salminen](https://arielsalminen.com)
